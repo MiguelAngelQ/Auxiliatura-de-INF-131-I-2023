@@ -1,0 +1,19 @@
+class Vehiculo{
+	private:
+		string marca, color, modelo
+	
+	public:
+		Vehiculo(){
+			marca = color = modelo = ""
+		}
+
+		leer(){
+			read(marca, color, modelo)
+		}
+
+		mostrar(){
+			print(marca, color, modelo)
+		}
+
+		//getters, setters
+}

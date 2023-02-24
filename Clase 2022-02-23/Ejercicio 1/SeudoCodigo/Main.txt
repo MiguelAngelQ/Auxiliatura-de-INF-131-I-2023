@@ -1,0 +1,57 @@
+ultimo(ColaSimpleV w){
+	aux = new ColaSimpleV()
+	while not w.esvacia(){
+		x = w.eliminar()//x es Vehiculo
+		if w.esvacia()
+			x.mostrar()
+		aux.adicionar(x)
+	}
+	w.vaciar(aux)
+}
+
+ultimo2(ColaSimpleV w){
+	n = w.nroelem()
+	for i = 1 to n - 1
+		w.adicionar(w.eliminar())
+	x = w.eliminar()
+	x.mostrar()
+	w.adicionar(x)
+}
+
+intercambiar(ColaSimpleV w){
+	primero = w.eliminar()
+	n = w.nroelem()
+	for i = 1 to n - 1
+		w.adicionar(w.eliminar())
+	w.adicionar(primero)
+}
+
+ordenarPorModelo(ColaSimpleV w){
+	a, b = new ColaSimpleV()
+	while not w.esvacia(){
+		elem = w.eliminar()
+		while not w.esvacia(){
+			x = w.eliminar()
+			if x.getModelo() > elem.getModelo(){
+				a.adicionar(elem)
+				elem = x
+			}else 
+				a.adicionar(x)
+		}
+		b.adicionar(elem)
+		w.vaciar(a)
+	}
+	w.vaciar(b)
+}
+
+Begin
+	a = new ColaSimpleV()
+	read(n)
+	a.llenar(n)
+	a.mostrar()
+	ultimo(a) //inciso a
+	intercambiar(a) //inciso b
+	a.mostrar()
+	ordenarPorModelo(a) //inciso c
+	a.mostrar()
+End

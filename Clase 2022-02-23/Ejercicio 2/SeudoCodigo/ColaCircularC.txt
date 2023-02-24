@@ -1,0 +1,75 @@
+class ColaCircularC{
+	private:
+		int max = 30
+		char v[max + 1]
+		int ini, fin
+
+	public:
+		ColaCircularC(){
+			ini = fin = 0
+		}
+
+		esvacia(){
+			if ini = 0 and fin = 0
+				return true 
+			return false
+		}
+
+		esllena(){
+			if nroelem() = max - 1
+				return true
+			return false
+		}
+
+		nroelem(){
+			return (max + fin - ini) % max
+		}
+
+		adicionar(char elem){
+			if esllena()
+				print("cola llena")
+			else{
+				fin = (fin + 1) % max;
+				v[fin] = elem;
+			}
+		}
+
+		eliminar(){
+			char elem = ' ';
+			if not esvacia() {
+				ini = (ini + 1) % max
+				elem = v[ini]
+				if nroelem() = 0
+					ini = fin = 0
+			} else
+				print("Cola circular vacia")
+			return elem
+		}
+
+		llenar(int n){
+			for i = 1 to n {
+				read(elem)
+				adicionar(elem)
+			}
+		}
+
+		mostrar(){
+			elem = ' ';
+			if esvacia()
+				print("Cola vacia")
+			else {
+				aux = new ColaCircularC()
+				while not esvacia() {
+					elem = eliminar()
+					aux.adicionar(elem)
+					print(elem)
+				}
+				vaciar(aux)
+			}
+		}
+
+		vaciar(ColaCircularC z){
+			while not z.esvacia()
+				adicionar(z.eliminar())
+		}
+}
