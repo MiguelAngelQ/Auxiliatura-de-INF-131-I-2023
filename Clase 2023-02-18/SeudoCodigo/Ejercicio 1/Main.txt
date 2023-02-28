@@ -1,0 +1,28 @@
+intercambiar(Pila w, Pila y) {
+	tamanioW = w.nroelem()
+	tamanioY = y.nroelem()
+	w.vaciar(y)
+	aux = w.eliminar()
+	y.vaciar(w)
+	w.adicionar(aux)
+	aux = y.eliminar()
+	for i = 1 to tamanioW - 1
+		w.adicionar(y.eliminar())
+	w.vaciar(y)
+	y.adicionar(aux)
+	for i = 1 to tamanioY - 1
+		y.adicionar(w.eliminar())
+}
+
+Begin:
+	a, b = new Pila()
+	read(tamanio)
+	a.llenar(tamanio)
+	b.llenar(tamanio)
+	a.mostrar()
+	b.mostrar()
+	intercambiar(a, b)
+	a.mostrar()
+	b.mostrar()
+End
+

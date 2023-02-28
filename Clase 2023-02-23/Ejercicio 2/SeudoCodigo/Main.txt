@@ -1,0 +1,59 @@
+cantidadDeOcurrencias(ColaCircularC w, char x) {
+	cont = 0
+	n = w.nroelem()
+	for i = 0 to n - 1 {
+		elem = w.eliminar()
+		if elem = x
+			cont = cont + 1
+		w.adicionar(elem)
+	}
+	return cont
+}
+
+maximoRepetido(ColaCircularC w) {
+	maximo = 0
+	n = w.nroelem()
+	for i = 0 to n - 1 {
+		elem = w.eliminar()
+		w.adicionar(elem)
+		ans = cantidadDeOcurrencias(w, elem)
+		if ans > maximo
+			maximo = ans
+	}
+	return maximo
+}
+
+llevarAlFinal(ColaCircularC w) {
+	int nro = w.nroelem()
+	for i = 0 to nro - 1 {
+		maximoRepe = maximoRepetido(w)
+		a, b = new ColaCircularC()
+		while not w.esvacia() {
+			elem = w.eliminar()
+			cantidad = cantidadDeOcurrencias(w, elem) + 1
+			if cantidad = maximoRepe {
+				a.adicionar(elem)
+				while not w.esvacia() {
+					elem2 = w.eliminar()
+					if elem2 = elem
+						a.adicionar(elem2)
+					else
+						b.adicionar(elem2)
+				}
+			} else
+				b.adicionar(elem)
+		}
+		w.vaciar(b)
+		w.vaciar(a)
+	}
+}
+
+Begin
+	a = new ColaCircularC()
+	read(n)
+	a.llenar(n)
+	a.mostrar()
+
+	llevarAlFinal(a)
+	a.mostrar()
+End

@@ -1,0 +1,81 @@
+class ColaSimpleV{
+	private:
+		int max = 30
+		Vehiculo v[max + 1]
+		int ini, fin
+
+	public:
+		ColaSimpleV(){
+			ini = fin = 0
+		}
+
+		esvacia(){
+			if ini = 0 and fin = 0
+				return true 
+			return false
+		}
+
+		esllena(){
+			if fin = max
+				return true
+			return false
+		}
+
+		nroelem(){
+			return fin - ini
+		}
+
+		adicionar(Vehiculo elem){
+			if esllena()
+				print("cola llena")
+			else{
+				v[fin + 1] = elem
+				fin = fin + 1
+			}
+		}
+
+		eliminar(){
+			elem = new Vehiculo()
+			if esvacia()
+				print("cola vacia")
+			else{
+				elem = v[ini + 1]
+				ini = ini + 1
+				if ini = fin
+					ini = fin = 0
+			}
+			return elem
+		}
+
+		llenar(int n){
+			for i = 1 to n {
+				elem = new Vehiculo()
+				elem.leer()
+				adicionar(elem)
+			}
+		}
+
+		mostrar(){
+			aux = new ColaSimpleV()
+			while not esvacia(){
+				x = eliminar()
+				x.mostrar()
+				aux.adicionar(x)
+			}
+			vaciar(aux)
+		}
+
+		mostrar2(){
+			n = nroelem()
+			for i = 1 to n{
+				x = eliminar()
+				x.mostrar()
+				adicionar(x)
+			}
+		}
+
+		vaciar(ColaSimpleV z){
+			while not z.esvacia()
+				adicionar(z.eliminar())
+		}
+}

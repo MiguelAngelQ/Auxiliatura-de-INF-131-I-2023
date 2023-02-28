@@ -1,0 +1,71 @@
+class Pila {
+	private:
+		int max = 30;
+		int v[] = new int[max + 1];
+		int tope;
+
+	public:
+		Pila() {
+			tope = 0
+		}
+
+		esvacia() {
+			if tope = 0
+				return true
+			return false
+		}
+
+		esllena() {
+			if tope = max
+				return true
+			return false
+		}
+
+		nroelem() {
+			return tope
+		}
+
+		adicionar(int elem) {
+			if not esllena() {
+				tope = tope + 1
+				v[tope] = elem
+			} else
+				print("Pila llena")
+		}
+
+		eliminar() {
+			elem = 0;
+			if not esvacia() {
+				elem = v[tope]
+				tope = tope - 1
+			} else
+				print("Pila vacia")
+			return elem
+		}
+
+		mostrar() {
+			if (esvacia())
+				print("Pila vacia")
+			else {
+				aux = new Pila();
+				while not esvacia() {
+					elem = eliminar()
+					aux.adicionar(elem)
+					print(elem)
+				}
+				vaciar(aux)
+			}
+		}
+
+		llenar(int n) {
+			for i = 1 to n {
+				read(elem)
+				adicionar(elem)
+			}
+		}
+
+		vaciar(Pila a) {
+			while not a.esvacia()
+				adicionar(a.eliminar())
+		}
+}

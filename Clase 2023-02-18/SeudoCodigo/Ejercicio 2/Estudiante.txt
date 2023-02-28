@@ -1,0 +1,51 @@
+class Estudiante {
+
+	private:
+		String nom, pat, mat;
+		int ci;
+
+	public:
+		Estudiante() {
+			// TODO Auto-generated constructor stub
+		}
+
+		leer() {
+			read(nom, pat, mat, ci)
+		}
+
+		mostrar() {
+			print(nom, pat, mat, ci)
+		}
+
+		getNom() {
+			return nom
+		}
+
+		setNom(String nom) {
+			this.nom = nom
+		}
+
+		getPat() {
+			return pat
+		}
+
+		setPat(String pat) {
+			this.pat = pat
+		}
+
+		getMat() {
+			return mat
+		}
+
+		setMat(String mat) {
+			this.mat = mat
+		}
+
+		getCi() {
+			return ci
+		}
+
+		setCi(int ci) {
+			this.ci = ci
+		}	
+}
